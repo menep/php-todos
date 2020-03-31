@@ -7,5 +7,8 @@
             "email": "menep@protonmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "scripts": {
+        "serve": "php -S localhost:8000"
+    }
 }
