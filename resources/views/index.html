@@ -27,18 +27,29 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+    <link rel="stylesheet" href="/resources/styles/main.css">
   </head>
   <body>
-    <header>
-      <a href="/"><h2>Home</h2></a>
-    </header>
+    <div class="min-vh-100 min-vw-100 background--main">
+      <header class="background--orange">
+        <nav class="d-flex justify-content-center">
+          <a href="/" class="text-white">Home</a>
+        </nav>
+      </header>
 
-    <main>
-      <p>Main</p>
-    </main>
+      <main class="container">
+        <section class="row">
+          <aside class="col-4">
+            aside
+          </aside>
+          <div class="col-8">asdasd</div>
+        </section>
+      </main>
 
-    <footer>
-      <a href="https://github.com/menep/php-todos">See on GitHub</a>
-    </footer>
+      <footer class="fixed-bottom background--orange d-flex justify-content-center">
+        <a href="https://github.com/menep/php-todos" class="text-white">See on GitHub</a>
+      </footer>
+    </div>
   </body>
 </html>
