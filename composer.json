@@ -1,0 +1,11 @@
+{
+    "name": "pierantonio/php-todos",
+    "type": "project",
+    "authors": [
+        {
+            "name": "menep",
+            "email": "menep@protonmail.com"
+        }
+    ],
+    "require": {}
+}
