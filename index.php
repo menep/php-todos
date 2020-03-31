@@ -1,3 +1,3 @@
 <?php
 
-echo 'init';
+require "resources/views/index.html";
