@@ -1,13 +1,13 @@
 <?php
 
 require '../app/Request.php';
-require '../app/controllers/HomeController.php';
+require '../app/controllers/MiscController.php';
 
 class Router
 {
     protected $routes = [
         'GET' => [
-            '/' => 'HomeController@index',
+            '/' => 'MiscController@index',
             'todos' => 'TodoController@index',
         ],
         'POST' => [
