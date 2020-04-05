@@ -23,6 +23,8 @@ class Router
         if (array_key_exists($url, $this->routes[$method])) {
             [$controllerName, $controllerMethod] = explode('@', $this->routes[$method][$url]);
             self::executeController($controllerName, $controllerMethod);
+        } else {
+            (new MiscController)->notFound();
         }
     }
 
