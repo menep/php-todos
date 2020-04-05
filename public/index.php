@@ -1,3 +1,5 @@
 <?php
 
-include 'index.html';
+require '../app/Router.php';
+
+(new Router)->direct();
