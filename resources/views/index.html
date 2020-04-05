@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menep's php todos</title>
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-
-    <link rel="stylesheet" href="/resources/styles/main.css">
-  </head>
-  <body>
-    <div class="min-vh-100 min-vw-100 background--main">
-      <header class="background--orange">
-        <nav class="d-flex justify-content-center">
-          <a href="/" class="text-white">Home</a>
-        </nav>
-      </header>
-
-      <main class="container">
-        <section class="row">
-          <!-- TODO: add form to submit a new todo -->
-        </section>
-      </main>
-
-      <footer class="fixed-bottom background--orange d-flex justify-content-center">
-        <a href="https://github.com/menep/php-todos" class="text-white">See on GitHub</a>
-      </footer>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Php todos</title>
+</head>
+<body>
+  <h1>Create todo</h1>
+  <form action="">
+    <label>Body: <input type="text" name="body"></label>
+    <br>
+    <label>
+      Due:
+      <input type="date" name="date">
+    </label>
+    <br>
+    <label>Priority:
+      <select name="priority">
+        <option value="1">High</option>
+        <option value="2">Mid</option>
+        <option value="3">Low</option>
+      </select>
+    </label>
+    <br>
+    <label>
+      Tags:
+      <select name="tags">
+        <option value="1">High</option>
+        <option value="2">Mid</option>
+        <option value="3">Low</option>
+      </select>
+    </label>
+    <br>
+    <label>Completed: <input type="checkbox" name="completed"></label>
+    <br>
+    <input type="submit" value="Create todo">
+  </form>
+</body>
 </html>
