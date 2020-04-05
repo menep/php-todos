@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Create todo</h1>
-  <form action="">
+  <form action="/todos/create" method="POST">
     <label>Body: <input type="text" name="body"></label>
     <br>
     <label>
@@ -24,11 +24,11 @@
     </label>
     <br>
     <label>
-      Tags:
+      Tag:
       <select name="tags">
-        <option value="1">High</option>
-        <option value="2">Mid</option>
-        <option value="3">Low</option>
+        <option value="work">Work</option>
+        <option value="chores">Chores</option>
+        <option value="free-time">Free time</option>
       </select>
     </label>
     <br>
