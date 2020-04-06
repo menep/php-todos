@@ -7,6 +7,11 @@
             "email": "menep@protonmail.com"
         }
     ],
+    "autoload": {
+        "classmap": [
+            "app/"
+        ]
+    },
     "require": {
         "vlucas/phpdotenv": "^4.1"
     },
