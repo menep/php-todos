@@ -8,6 +8,11 @@ class TodosController
     {
         $fetchedTodos = (new Database)->query('SELECT * FROM todos;')->fetchAll();
         
-        require '../resources/views/index.todos.php';
+        require '../resources/views/todos/index.todos.php';
+    }
+
+    public function create()
+    {
+        require 'create.todos.html';
     }
 }
