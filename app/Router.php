@@ -1,7 +1,8 @@
 <?php
 
-require '../app/Request.php';
 require '../app/controllers/MiscController.php';
+
+use App\Request;
 
 class Router
 {
