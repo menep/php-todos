@@ -1,8 +1,7 @@
 <?php
 
-require '../app/controllers/MiscController.php';
-
 use App\Request;
+use App\Controllers;
 
 class Router
 {
@@ -33,7 +32,9 @@ class Router
     private static function executeController($controllerName, $method)
     {
         if (file_exists('../app/controllers/' . $controllerName . '.php')) {
-            (new $controllerName)->$method();
+            $namespacedControllerName = "App\\Controllers\\{$controllerName}";
+            
+            (new $namespacedControllerName)->$method();
         } else {
             echo 'Whoops! There was an error processing your request...';
         }

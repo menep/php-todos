@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controllers;
+
 use App\Database;
 
 class TodosController

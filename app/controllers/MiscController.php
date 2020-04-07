@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controllers;
+
 class MiscController {
     public function index()
     {
