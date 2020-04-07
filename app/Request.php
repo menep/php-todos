@@ -16,6 +16,6 @@ class Request
 
     public function payload()
     {
-        return $_REQUEST;
+        return empty($_REQUEST) ? false : $_REQUEST;
     }
 }
