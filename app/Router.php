@@ -9,6 +9,7 @@ class Router
         'GET' => [
             '/' => 'MiscController@index',
             '/todos' => 'TodosController@index',
+            '/todos/create' => 'TodosController@create'
         ],
         'POST' => [
             '/todos/create' => 'TodosController@store'
