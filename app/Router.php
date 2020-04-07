@@ -8,10 +8,10 @@ class Router
     protected $routes = [
         'GET' => [
             '/' => 'MiscController@index',
-            'todos' => 'TodoController@index',
+            '/todos' => 'TodosController@index',
         ],
         'POST' => [
-            '/todos/create' => 'TodoController@store'
+            '/todos/create' => 'TodosController@store'
         ]
     ];
 
@@ -33,7 +33,7 @@ class Router
         if (file_exists('../app/controllers/' . $controllerName . '.php')) {
             (new $controllerName)->$method();
         } else {
-            echo 'File not found';
+            echo 'Whoops! There was an error processing your request...';
         }
     }
 }
