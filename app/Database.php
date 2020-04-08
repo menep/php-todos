@@ -30,11 +30,11 @@ class Database
         }
     }
 
-    public function query($sql)
+    public function query($sql, $boundParameters)
     {
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute($boundParameters);
             return $stmt;
         } catch (\Exception $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
