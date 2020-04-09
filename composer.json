@@ -16,6 +16,7 @@
         "vlucas/phpdotenv": "^4.1"
     },
     "scripts": {
-        "serve": "php -S localhost:8000 -t public"
+        "dev-server": "php -S localhost:8000 -t public",
+        "serve": "composer run-script dev-server --timeout=0"
     }
 }
