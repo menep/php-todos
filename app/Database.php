@@ -30,7 +30,7 @@ class Database
         }
     }
 
-    public function query($sql, $boundParameters)
+    public function query($sql, $boundParameters = [])
     {
         try {
             $stmt = $this->pdo->prepare($sql);
