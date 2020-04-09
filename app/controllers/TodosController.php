@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Database;
-use App\Request;
+use App\Core\Database;
+use App\Core\Request;
 use App\Models\Todo;
 
 class TodosController
@@ -25,7 +25,7 @@ class TodosController
         if (!Request::payload()) {
             throw new Exception("Error storing todo", 1);
         }
-        // TODO: destructure request payload, pass it to Todo model constructor
-        // (new Todo('test'))->save();
+        
+        Todo::save();
     }
 }
