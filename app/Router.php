@@ -2,9 +2,6 @@
 
 namespace App;
 
-use App\Request;
-use App\Controllers;
-
 class Router
 {
     protected $routes = [
@@ -34,6 +31,7 @@ class Router
     private static function executeController($controllerName, $method)
     {
         if (file_exists('../app/controllers/' . $controllerName . '.php')) {
+            // TODO: check if namespace can be removed from string
             $namespacedControllerName = "App\\Controllers\\{$controllerName}";
             
             (new $namespacedControllerName)->$method();
