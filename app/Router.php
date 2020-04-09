@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Controllers;
+
 class Router
 {
     protected $routes = [
@@ -24,7 +26,7 @@ class Router
             [$controllerName, $controllerMethod] = explode('@', $this->routes[$method][$url]);
             self::executeController($controllerName, $controllerMethod);
         } else {
-            (new MiscController)->notFound();
+            (new Controllers\MiscController)->notFound();
         }
     }
 
