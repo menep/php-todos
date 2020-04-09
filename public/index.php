@@ -4,4 +4,4 @@ require '../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable('../');
 $dotenv->load();
 
-(new \App\Router)->direct();
+(new App\Core\Router)->direct();
