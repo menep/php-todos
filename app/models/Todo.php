@@ -2,29 +2,19 @@
 
 namespace App\Models;
 
+use App\Core\Request;
+use App\Core\Database;
+
 class Todo
 {
-    protected $body;
-
-    public function __construct(string $body = null)
+    public static function save()
     {
-        // TODO: add other properties (created_at, etc)
-        $this->body = $body;
-    }
-
-    public function save()
-    {
-        // TODO: add logic to save in database
-        // var_dump($this);
-        // $parameters = Request::payload();
-        // $boundParameters = [
-        //     'body' => $parameters['body'],
-        //     'completed' => $parameters['completed'],
-        //     'date' => 0,
-        //     'priority' => $parameters['priority'],
-        //     'tags' => $parameters['tags'],
-        // ];
-        // $sql = 'INSERT INTO todos (body, completed, due_at, priority, tags) values (:body, :completed, :date, :priority, :tags)';
-        // (new Database)->query($sql, $boundParameters);
+        $parameters = Request::payload();
+        $boundParameters = [
+            'body' => $parameters['body'],
+            'user_id' => 1 // TODO: set up registration or assignment of todos
+        ];
+        $sql = 'INSERT INTO todos (body, user_id) values (:body, :user_id)';
+        (new Database)->query($sql, $boundParameters);
     }
 }
