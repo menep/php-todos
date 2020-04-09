@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 use App\Request;
 use App\Controllers;
 
