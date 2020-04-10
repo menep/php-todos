@@ -17,7 +17,8 @@
     },
     "scripts": {
         "dev-server": "php -S localhost:8000 -t public",
-        "serve": "composer run-script dev-server --timeout=0"
+        "serve": "composer run-script dev-server --timeout=0",
+        "db-init": "php utilities/db-init.php"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.5"
