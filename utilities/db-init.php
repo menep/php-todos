@@ -25,6 +25,8 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-$sql = file_get_contents(__DIR__ . '/init.sql');
+$users = file_get_contents(__DIR__ . '/users.sql');
+$todos = file_get_contents(__DIR__ . '/todos.sql');
 
-$pdo->query($sql);
+$pdo->query($users);
+$pdo->query($todos);
