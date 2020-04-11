@@ -4,31 +4,33 @@ namespace App\Services;
 
 class Validator
 {
-    protected static function required($value)
+    public $errors = [];
+
+    protected function required($value)
     {
         if (!isset($value)) {
-            var_dump('Property is required');
+            $this->errors[] = 'Property is required';
         }
         if (is_string($value) && empty($value)) {
-            var_dump('Property is required: empty string provided');
+            $this->errors[] = 'Property is required: empty string provided';
         }
     }
 
     protected function string($value)
     {
         if (!is_string($value)) {
-            var_dump('Property is not a string');
+            $this->errors[] = 'Property is not a string';
         }
     }
 
     protected function maxChar255($value)
     {
         if (strlen($value) > 255) {
-            var_dump('Max allowed characters is 255');
+            $this->errors[] = 'Max allowed characters is 255';
         }
     }
 
-    public static function validate($todo, $criteria)
+    public function validate($todo, $criteria)
     {
         foreach ($criteria as $property => $rules) {
             try {
@@ -36,11 +38,13 @@ class Validator
                     throw new \Exception("Could not validate: '{$property}' not set");
                 }
                 foreach (\explode(',', $rules) as $rule) {
-                    if (!method_exists(static::class, $rule)) {
+                    if (!method_exists($this, $rule)) {
                         throw new \Exception("Could not validate: '{$rule}' rule unknown");
                     }
-                    self::$rule($todo[$property]);
+                    $this->$rule($todo[$property]);
                 }
+
+                return $this->errors;
             } catch (\Exception $e) {
                 // TODO: throw 500
                 var_dump($e->getMessage());
