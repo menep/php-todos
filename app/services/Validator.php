@@ -19,7 +19,7 @@ class Validator
                     throw new \Exception("Could not validate: '{$property}' not set");
                 }
                 foreach (\explode(',', $rules) as $rule) {
-                    if (!method_exists(self, $rule)) {
+                    if (!method_exists(static::class, $rule)) {
                         throw new \Exception("Could not validate: '{$rule}' rule unknown");
                     }
                     self::$rule($todo[$property]);
