@@ -22,10 +22,6 @@ class TodosController
 
     public function store()
     {
-        if (!Request::payload()) {
-            throw new Exception("Error storing todo", 1);
-        }
-        
-        Todo::save();
+        Todo::save(Request::payload());
     }
 }
