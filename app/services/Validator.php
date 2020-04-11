@@ -7,7 +7,24 @@ class Validator
     protected static function required($value)
     {
         if (!isset($value)) {
-            throw new Exception('Property is required');
+            var_dump('Property is required');
+        }
+        if (is_string($value) && empty($value)) {
+            var_dump('Property is required: empty string provided');
+        }
+    }
+
+    protected function string($value)
+    {
+        if (!is_string($value)) {
+            var_dump('Property is not a string');
+        }
+    }
+
+    protected function maxChar255($value)
+    {
+        if (strlen($value) > 255) {
+            var_dump('Max allowed characters is 255');
         }
     }
 
