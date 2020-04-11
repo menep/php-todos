@@ -11,7 +11,7 @@ class Todo
     public static function save($todo)
     {
         try {
-            $validationCriteria = ['body' => 'required'];
+            $validationCriteria = ['body' => 'required,string,maxChar255'];
             Validator::validate($todo, $validationCriteria);
 
             // $boundParameters = [
