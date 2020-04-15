@@ -51,12 +51,5 @@ class Validator
                 die();
             }
         }
-        
-        // $errors = [];
-        // list('body' => $body) = $todo;
-        // // required, string, max char 255
-        // if (!isset($body) || !is_string($body)) {
-        //     throw new Exception('Error: malformed \'body\' property');
-        // }
     }
 }
