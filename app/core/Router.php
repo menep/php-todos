@@ -41,4 +41,11 @@ class Router
             echo 'Whoops! There was an error processing your request...';
         }
     }
+
+    public function redirect($url)
+    {
+        // TODO: use session and header()
+        [$controllerName, $controllerMethod] = explode('@', $this->routes['GET'][$url]);
+        self::executeController($controllerName, $controllerMethod);
+    }
 }
