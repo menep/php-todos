@@ -12,8 +12,10 @@ class Todo
     {
         try {
             $validationCriteria = ['body' => 'required,string,maxChar255'];
-            Validator::validate($todo, $validationCriteria);
-
+            $errors = (new Validator)->validate($todo, $validationCriteria);
+            if (!empty($errors)) {
+                throw new Exception($errors, 1);
+            }
             // $boundParameters = [
             // 'body' => $parameters['body'],
             // 'user_id' => 1 // TODO: set up registration or assignment of todos
