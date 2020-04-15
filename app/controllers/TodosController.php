@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Core\Router;
 use App\Core\Database;
 use App\Core\Request;
 use App\Models\Todo;
@@ -22,6 +23,10 @@ class TodosController
 
     public function store()
     {
-        Todo::save(Request::payload());
+        try {
+            Todo::save(Request::payload());
+        } catch (\Throwable $th) {
+            (new Router)->redirect('/todos/create');
+        }
     }
 }
