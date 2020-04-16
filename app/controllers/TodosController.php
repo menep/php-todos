@@ -25,6 +25,7 @@ class TodosController
     {
         try {
             Todo::save(Request::payload());
+            (new Router)->redirect('/todos/create');
         } catch (\Throwable $th) {
             // TODO: handle error properly
             (new Router)->redirect('/todos/create');
