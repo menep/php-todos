@@ -8,16 +8,11 @@ class Todo
 {
     public static function save($todo)
     {
-        try {
-            // TODO: add validation
+        // TODO: add validation
 
-            $sql = 'INSERT INTO todos (body, priority) values (:body, :priority)';
-            $boundParams = ['body' => $todo['body'], 'priority' => $todo['priority']];
+        $sql = 'INSERT INTO todos (body, priority) values (:body, :priority)';
+        $boundParams = ['body' => $todo['body'], 'priority' => $todo['priority']];
 
-            Query::execute($sql, $boundParams);
-        } catch (\Throwable $th) {
-            var_dump($th);
-            die();
-        }
+        Query::execute($sql, $boundParams);
     }
 }
