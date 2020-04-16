@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\Router;
-use App\Core\Database;
+use App\Core\Query;
 use App\Core\Request;
 use App\Models\Todo;
 
@@ -11,7 +11,7 @@ class TodosController
 {
     public function index()
     {
-        $fetchedTodos = (new Database)->query('SELECT * FROM todos;')->fetchAll();
+        $fetchedTodos = Query::execute('SELECT * FROM todos;')->fetchAll();
         
         require '../resources/views/todos/index.todos.php';
     }
@@ -26,6 +26,7 @@ class TodosController
         try {
             Todo::save(Request::payload());
         } catch (\Throwable $th) {
+            // TODO: handle error properly
             (new Router)->redirect('/todos/create');
         }
     }
