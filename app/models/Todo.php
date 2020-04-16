@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use App\Core\Request;
-use App\Core\Database;
-use App\Services\Validator;
+use App\Core\Query;
 
 class Todo
 {
@@ -14,8 +12,9 @@ class Todo
             // TODO: add validation
 
             $sql = 'INSERT INTO todos (body, priority) values (:body, :priority)';
+            $boundParams = ['body' => $todo['body'], 'priority' => $todo['priority']];
 
-            (new Database)->query($sql, ['body' => $todo['body'], 'priority' => $todo['priority']]);
+            Query::execute($sql, $boundParams);
         } catch (\Throwable $th) {
             var_dump($th);
             die();
