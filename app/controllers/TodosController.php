@@ -18,13 +18,14 @@ class TodosController
 
     public function create()
     {
-        require 'create.todos.html';
+        require 'create.todos.php';
     }
 
     public function store()
     {
         try {
             Todo::save(Request::payload());
+            $_SESSION['success'] = true;
             (new Router)->redirect('/todos/create');
         } catch (\Throwable $th) {
             // TODO: handle error properly
