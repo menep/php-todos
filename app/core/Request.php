@@ -11,11 +11,23 @@ class Request
 
     public static function url()
     {
-        return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+        $parsedUrl = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+        $match = preg_match('/\d+/', $parsedUrl);
+        if ($match) {
+            $parsedUrl = preg_replace('/\d+/', 'id', $parsedUrl);
+        }
+        return $parsedUrl;
     }
 
     public function payload()
     {
         return empty($_REQUEST) ? false : $_REQUEST;
+    }
+
+    public function urlId()
+    {
+        $parsedUrl = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+        preg_match('/\d+/', $parsedUrl, $matches);
+        return $matches[0];
     }
 }
