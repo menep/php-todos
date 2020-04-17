@@ -18,7 +18,7 @@ class TodosController
 
     public function create()
     {
-        require 'create.todos.php';
+        require '../resources/views/todos/create.todos.php';
     }
 
     public function store()
