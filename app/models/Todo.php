@@ -6,6 +6,14 @@ use App\Core\Query;
 
 class Todo
 {
+    public function find($id)
+    {
+        $sql = 'SELECT * FROM todos WHERE id=:id';
+        $boundParams = ['id' => $id];
+
+        return Query::execute($sql, $boundParams)->fetch();
+    }
+
     public static function save($todo)
     {
         // TODO: add validation
