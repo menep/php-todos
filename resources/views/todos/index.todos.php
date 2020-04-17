@@ -15,7 +15,11 @@
         <tr>
             <td><?= $todo['id'] ?>
             </td>
-            <td><?= $todo['body'] ?>
+            <td>
+                <a
+                    href="/todos/<?= $todo['id'] ?>">
+                    <?= $todo['body'] ?>
+                </a>
             </td>
             <td><?= $todo['due'] ?>
             </td>
