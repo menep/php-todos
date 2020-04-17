@@ -1,3 +1,5 @@
+<?php require __DIR__ . '/../partials/head.html'; ?>
+
 <h1>All todos</h1>
 
 <?php if ($fetchedTodos) : ?>
