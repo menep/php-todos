@@ -29,6 +29,7 @@ class TodosController
             (new Router)->redirect('/todos/create');
         } catch (\Throwable $th) {
             // TODO: handle error properly
+            $_SESSION['error'] = true;
             (new Router)->redirect('/todos/create');
         }
     }
