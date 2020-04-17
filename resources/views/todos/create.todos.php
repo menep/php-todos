@@ -27,8 +27,12 @@
     <input type="submit" value="Create todo" />
   </form>
 
+  <?php if (isset($_SESSION)) : ?>
   <?php if ($_SESSION['success']) : ?>
   <p style="color: green;">Your new Todo was successfully created!</p>
+  <?php elseif ($_SESSION['error']) : ?>
+  <p style="color: red;">There was an issue creating your todo</p>
+  <?php endif; ?>
   <?php endif ?>
 </body>
 
