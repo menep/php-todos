@@ -11,6 +11,10 @@
   <h1>Create todo</h1>
   <form action="/todos/create" method="POST">
     <label>Body: <input type="text" name="body" /></label>
+    <br>
+    <label>Due:
+      <input type="date" name="due">
+    </label>
     <br />
     <label>Priority:
       <select name="priority">
