@@ -33,4 +33,10 @@ class TodosController
             (new Router)->redirect('/todos/create');
         }
     }
+
+    public function show()
+    {
+        $todo = Todo::find(Request::urlId());
+        require '../resources/views/todos/show.todos.php';
+    }
 }
