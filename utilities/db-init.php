@@ -5,7 +5,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $host = getenv('HOST');
-$db = 'test'; // TODO: change
+$db = getenv('DBNAME');
 $port = getenv('PORT');
 
 $dsn = "mysql:host={$host};dbname={$db};port={$port};charset=utf8mb4";
