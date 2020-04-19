@@ -35,4 +35,6 @@
 <?php else : ?>
 <p>No todos found</p>
 
-<?php endif;
+<?php endif;?>
+
+<?php require __DIR__ . '/partials/footer.html';

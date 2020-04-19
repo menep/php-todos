@@ -26,6 +26,5 @@
 <p style="color: red;">There was an issue creating your todo</p>
 <?php endif; ?>
 <?php endif ?>
-</body>
 
-</html>
+<?php require __DIR__ . '/partials/footer.html';
