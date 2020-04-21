@@ -22,7 +22,8 @@
         </nav>
       </header>
 
-      <?php require $content; ?>
+      <?php echo $content; ?>
+
     </div>
   </body>
 </html>
