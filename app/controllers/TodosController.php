@@ -39,6 +39,8 @@ class TodosController
     public function show()
     {
         $todo = Todo::find(Request::urlId());
-        require '../resources/views/todos/show.todos.php';
+
+        $contentPath = \getcwd() . '/../resources/views/todos/show.todos.php';
+        require __DIR__ . '/../../resources/views/partials/base.view.php';
     }
 }
