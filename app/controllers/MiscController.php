@@ -6,7 +6,8 @@ class MiscController
 {
     public function index()
     {
-        require '../resources/views/index.php';
+        $content = file_get_contents(__DIR__ . '/../../resources/views/index.html');
+        require __DIR__ . '/../../resources/views/partials/base.view.php';
     }
 
     public function notFound()
