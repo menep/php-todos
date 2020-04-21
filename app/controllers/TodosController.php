@@ -13,7 +13,8 @@ class TodosController
     {
         $fetchedTodos = Query::execute('SELECT * FROM todos;')->fetchAll();
         
-        require '../resources/views/todos/index.todos.php';
+        $contentPath = \getcwd() . '/../resources/views/todos/index.todos.php';
+        require __DIR__ . '/../../resources/views/partials/base.view.php';
     }
 
     public function create()
