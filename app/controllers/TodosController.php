@@ -19,7 +19,8 @@ class TodosController
 
     public function create()
     {
-        require '../resources/views/todos/create.todos.php';
+        $contentPath = \getcwd() . '/../resources/views/todos/create.todos.php';
+        require __DIR__ . '/../../resources/views/partials/base.view.php';
     }
 
     public function store()
