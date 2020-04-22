@@ -7,6 +7,8 @@
   <title>Php todos</title>
   <link rel="stylesheet" href="/styles/base.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/typography.css">
 </head>
 
 <body>
