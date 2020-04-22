@@ -1,5 +1,3 @@
-<?php require __DIR__ . '/../partials/head.html'; ?>
-
 <h1>Create todo</h1>
 <form action="/todos/create" method="POST">
   <label>Body: <input type="text" name="body" /></label>
@@ -25,6 +23,4 @@
 <?php elseif ($_SESSION['error']) : ?>
 <p style="color: red;">There was an issue creating your todo</p>
 <?php endif; ?>
-<?php endif ?>
-
-<?php require __DIR__ . '/partials/footer.html';
+<?php endif;

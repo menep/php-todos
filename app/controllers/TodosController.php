@@ -13,12 +13,14 @@ class TodosController
     {
         $fetchedTodos = Query::execute('SELECT * FROM todos;')->fetchAll();
         
-        require '../resources/views/todos/index.todos.php';
+        $contentPath = \getcwd() . '/../resources/views/todos/index.todos.php';
+        require __DIR__ . '/../../resources/views/partials/base.view.php';
     }
 
     public function create()
     {
-        require '../resources/views/todos/create.todos.php';
+        $contentPath = \getcwd() . '/../resources/views/todos/create.todos.php';
+        require __DIR__ . '/../../resources/views/partials/base.view.php';
     }
 
     public function store()
@@ -37,6 +39,8 @@ class TodosController
     public function show()
     {
         $todo = Todo::find(Request::urlId());
-        require '../resources/views/todos/show.todos.php';
+
+        $contentPath = \getcwd() . '/../resources/views/todos/show.todos.php';
+        require __DIR__ . '/../../resources/views/partials/base.view.php';
     }
 }
