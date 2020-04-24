@@ -8,7 +8,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Todo</th>
-                    <th>Created at</th>
+                    <th>Due at</th>
                     <th>Priority</th>
                 </tr>
             </thead>
@@ -23,7 +23,8 @@
                             <?= $todo['body'] ?>
                         </a>
                     </td>
-                    <td><?= $todo['due'] ?>
+                    <td>
+                        <?= (new DateTime($todo['due']))->format('d/m/Y') ?>
                     </td>
                     <td><?= $todo['priority'] ?>
                     </td>
