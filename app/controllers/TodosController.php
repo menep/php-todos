@@ -11,7 +11,7 @@ class TodosController
 {
     public function index()
     {
-        $fetchedTodos = Query::execute('SELECT * FROM todos;')->fetchAll();
+        $fetchedTodos = Query::execute('SELECT * FROM todos ORDER BY due ASC;')->fetchAll();
         
         $contentPath = \getcwd() . '/../resources/views/todos/index.todos.php';
         require __DIR__ . '/../../resources/views/partials/base.view.php';
